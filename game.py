@@ -11,7 +11,7 @@ from utils import Position, object_to_rect
 
 
 class Game:
-    def __init__(self):
+    def __init__(self, map_name="level1", spawn_name="spawn1"):
         pygame.init()
 
         self.FPS = 60
@@ -37,7 +37,7 @@ class Game:
         self.impassables = None
         self.doors = None
 
-        self.load_map("level1", "spawn1")
+        self.load_map(map_name, spawn_name)
 
     def load_map(self, map_name, spawn_point):
         self.tmx_data = load_pygame(BASEDIR / "assets" / "maps" / f"{map_name}.tmx")
